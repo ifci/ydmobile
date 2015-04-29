@@ -19,8 +19,8 @@
 				hd.removeClass(options.on);
 				$(this).addClass(options.on);
 				bd.hide().eq(s).show();
-			});
-		});
+			})
+		})
 	};
 
 	// 返回顶部
@@ -43,11 +43,11 @@
 				var set = setInterval(function(){
 					clearInterval(set);
 					$("#layer").remove();
-				},3000);
+				},3000)
 			}
 			$('#layer').on('click',function(){
 				$(this).remove();
-			});
+			})
 	    },
 	    confirm: function(module, callback){
 	    	$('<div>',{
@@ -57,7 +57,7 @@
 	    	$('#layer,.alertTip').show();
 	    	$('.cancel,.sure').on('click', function(){
 	    		$('#layer').remove();
-	    	});
+	    	})
 	    	$('.sure').click(callback);
 	    }
 	};
@@ -75,10 +75,10 @@
 			t.children('li').first().addClass(options.on).siblings('li').removeClass(options.on);
 			t.children().on('click', function(){
 				$(this).addClass(options.on).siblings('li').removeClass(options.on);
-			});
-		});
-	};
-})(Zepto);
+			})
+		})
+	}
+})(Zepto)
 
 $(function(){
 
@@ -90,7 +90,7 @@ $(function(){
 		$(this).find('.spec_box').first().addClass('spec_curr');
 		$(this).find('.spec_box').click(function(){
 			$(this).addClass('spec_curr').siblings('.spec_box').removeClass('spec_curr');
-		});
+		})
 	});
 
 	$('.pdetail').tabs();
@@ -101,34 +101,14 @@ $(function(){
 		}else{
 			$('.plug-bg').remove();
 		}
-	});
+	})
 	$('.main1').delegate('.plug-bg', 'click', function(){
 		$("#plug-phone > div").removeClass("on");
 		$('#plug-btn').attr('checked', false).prop('checked', false);
 		$(this).remove();
-	});
+	})
 
 	$('.back_top').bTop();
 
-	$('.class_list').sfq();
 
-	// 名庄特卖
-	$('.mztm').on('tap', function(event) {
-		$(this).find('.jzlist').toggle();
-		if($('.jzbg').length < 1){
-			$('body').append('<div class="jzbg">');
-		}else{
-			$('body').remove('.jzbg');
-		}
-
-		event.preventDefault();
-	});/*
-	$(window).on('touchstart', function(){
-		$('.jzlist').hide();
-	});*/
-
-	$('body').delegate('.jzbg', 'touchstart', function(event) {
-		$(this).remove();
-		$('.jzlist').hide();
-	});
-});
+})
